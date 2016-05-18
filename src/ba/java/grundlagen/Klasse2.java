@@ -1,4 +1,4 @@
-package ba.java.grundlagen1;
+package ba.java.grundlagen;
 
 public class Klasse2 extends Klasse1 {
 

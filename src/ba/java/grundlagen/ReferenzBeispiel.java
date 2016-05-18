@@ -1,4 +1,4 @@
-package ba.java.grundlagen1;
+package ba.java.grundlagen;
 
 import ba.java.auto.Pkw;
 
