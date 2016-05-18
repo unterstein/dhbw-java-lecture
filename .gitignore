@@ -1,0 +1,12 @@
+.idea
+target/
+lib_managed/
+src_managed/
+test-output/
+*.iml
+.settings
+.project
+.classpath
+hs_err_pid*.log
+*.cache
+bin
