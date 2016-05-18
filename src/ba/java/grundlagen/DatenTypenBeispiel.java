@@ -57,6 +57,7 @@ public class DatenTypenBeispiel {
   public static void main(String[] args) {
     DatenTypenBeispiel beispiel  = new DatenTypenBeispiel();
     beispiel.stringBeispiel();
+    beispiel.castBeispiel();
     beispiel.arrayBeispiel();
     beispiel.stringBeispiel();
     beispiel.instanceOfBeispiel();
