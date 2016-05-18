@@ -10,3 +10,4 @@ test-output/
 hs_err_pid*.log
 *.cache
 bin
+out
