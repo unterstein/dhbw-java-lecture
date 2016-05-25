@@ -12,6 +12,10 @@ public class Rechteck {
     this.breite = breite;
   }
 
+  public Rechteck(int laenge) {
+    this(laenge, laenge);
+  }
+
   @Override
   public boolean equals(Object obj) {
     if (obj instanceof Rechteck) {
