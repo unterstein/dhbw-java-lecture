@@ -14,8 +14,8 @@ public class ThisSuperBeispiel {
   }
 
   public void setNumberOfSomething(int numberOfSomething) {
-    // In diesem Szenario muss sinnvollerweise die Variablen-Zuweisung mit this. deklariert werden
-    this.numberOfSomething = numberOfSomething;
+    System.out.println(numberOfSomething);
+    System.out.println(this.numberOfSomething);
   }
 
   public void print() {
@@ -24,6 +24,8 @@ public class ThisSuperBeispiel {
   }
 
   public static void main(String[] args) {
-    new ThisSuperBeispiel();
+    ThisSuperBeispiel beispiel = new ThisSuperBeispiel();
+    beispiel.numberOfSomething = 12;
+    beispiel.setNumberOfSomething(13);
   }
 }
