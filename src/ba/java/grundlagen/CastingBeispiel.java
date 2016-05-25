@@ -3,9 +3,6 @@ package ba.java.grundlagen;
 import ba.java.auto.AudiQFuenf;
 import ba.java.auto.Pkw;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class CastingBeispiel {
 
   public static void main(String[] args) {
