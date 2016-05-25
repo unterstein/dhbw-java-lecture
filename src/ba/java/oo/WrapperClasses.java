@@ -19,5 +19,12 @@ public class WrapperClasses {
     // Auch das parsen von Strings ist meistens möglich
     // Auch hier kann eine Ausnahme auftreten!
     Integer integer3 = Integer.parseInt("42");
+
+    // Kann natürlich auch in die Hose gehen!
+    Integer intereger4 = Integer.parseInt("Müll");
+  }
+
+  public static void main(String[] args) {
+    new WrapperClasses();
   }
 }
