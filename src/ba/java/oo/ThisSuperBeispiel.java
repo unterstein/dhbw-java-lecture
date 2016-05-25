@@ -18,7 +18,7 @@ public class ThisSuperBeispiel {
     this.numberOfSomething = numberOfSomething;
   }
 
-  public String print() {
+  public void print() {
     // toString ist Methode von Superklasse. Aufrufe müssen nicht explizit mit "super." deklariert werden!
     System.out.println(toString());
   }
