@@ -23,12 +23,14 @@ public class ReferenzenUebung {
     String string1 = "Hallo";
     String string2 = "Hallo";
     String string3 = "Hall".concat("o");
+    String string4 = new String(string3);
 
     System.out.println("Strings:");
     System.out.println(string1 == string2);
     System.out.println(string1 == string3);
     System.out.println(string1 == string3);
     System.out.println(string2 == string3);
+    System.out.println(string3 == string4);
 
     System.out.println("Nun mit .equals():");
     System.out.println(string1.equals(string2));
