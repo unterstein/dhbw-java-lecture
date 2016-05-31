@@ -7,9 +7,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Created by junterstein on 27.05.15.
- */
 public class GenericsBeispiel {
 
 

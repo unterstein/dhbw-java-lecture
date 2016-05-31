@@ -4,9 +4,6 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-/**
- * Created by junterstein on 27.05.15.
- */
 public class CompareBeispiel {
   public static void main(String[] args) {
 

@@ -7,9 +7,6 @@ import javafx.scene.input.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by junterstein on 27.05.15.
- */
 public class Java8Features {
 
   public static void main(String[] args) {
