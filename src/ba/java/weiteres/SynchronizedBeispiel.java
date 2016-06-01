@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class SynchronizedBeispiel {
 
-  Map<String, Object> exampleMap = new HashMap<>();
+  private Map<String, Object> exampleMap = new HashMap<>();
 
   private synchronized void methodSynchronized() {
     System.out.println("hallo");
