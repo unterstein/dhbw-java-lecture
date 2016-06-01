@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Java8Features {
 
+  // Siehe Java 8 Uebungen!
   public static void main(String[] args) {
     List<String> stringList = new ArrayList<>();
     stringList.add("asd");
