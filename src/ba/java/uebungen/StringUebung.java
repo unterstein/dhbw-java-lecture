@@ -19,10 +19,10 @@ public class StringUebung {
     String string4 = "Hallo1".replace("1", "2");
     String string5 = "Hallo2";
     System.out.println(string4 == string5);
-    System.out.println(string4 == string6);
 
     System.out.println("----");
     String string6 = "Hallo2";
+    System.out.println(string4 == string6);
     System.out.println(string5 == string6);
   }
 }
