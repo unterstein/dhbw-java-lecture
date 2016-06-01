@@ -9,10 +9,10 @@ import java.io.IOException;
 public class CharWriterBeispiel {
 
   private void charWriter() {
-    String s;
     FileWriter fw = null;
     BufferedWriter bw = null;
     try {
+      String s;
       fw = new FileWriter("buffer.txt");
       bw = new BufferedWriter(fw);
       for (int i = 1; i <= 10000; ++i) {
@@ -29,12 +29,24 @@ public class CharWriterBeispiel {
         if (bw != null) {
           bw.close();
         }
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
+      try {
         if (fw != null) {
           fw.close();
         }
       } catch (Exception e) {
         e.printStackTrace();
       }
+    }
+    // Java >= 7
+    try (FileWriter fw2 = new FileWriter("buffer.txt");
+         BufferedWriter bw2 = new BufferedWriter(fw);
+    ) {
+      // ...
+    } catch(Exception e) {
+      e.printStackTrace();
     }
   }
 
