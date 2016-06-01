@@ -43,7 +43,7 @@ public class ReflectionBeispiel {
 
       Field elementCount = aClass.getDeclaredField("elementCount");
       elementCount.setAccessible(true);
-      elementCount.setInt(vector, 12);
+      elementCount.setInt(vector, 12); // oooooopppsss!
 
       System.out.println("count: " + vector.size());
     } catch (Exception o_O) {
