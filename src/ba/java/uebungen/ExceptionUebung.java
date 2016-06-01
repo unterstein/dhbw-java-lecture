@@ -35,4 +35,8 @@ public class ExceptionUebung {
     throw new MeineException("Meins");
   }
 
+  public static void main(String[] args) throws FileNotFoundException {
+    test();
+  }
+
 }
