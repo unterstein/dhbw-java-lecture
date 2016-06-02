@@ -20,11 +20,11 @@ public class ExceptionUebung {
       e.printStackTrace();
     } catch (ArrayIndexOutOfBoundsException e) {
       e.printStackTrace();
-    } catch (NullPointerException e) {
+    } catch (MeineException e) {
       // Bitte immer etwas mit einer Exception machen und nicht einfach schlucken!!
       // e.printStackTrace();
     } catch (Exception e) { // Muss ganz unten stehen!!
-
+      e.printStackTrace();
     }
   }
 
@@ -35,8 +35,8 @@ public class ExceptionUebung {
     throw new MeineException("Meins");
   }
 
-  public static void main(String[] args) throws FileNotFoundException {
-    test();
+  public static void main(String[] args) {
+    trycatch();
   }
 
 }
