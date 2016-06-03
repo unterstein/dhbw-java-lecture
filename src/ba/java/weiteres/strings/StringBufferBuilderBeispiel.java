@@ -1,10 +1,15 @@
 package ba.java.weiteres.strings;
 
-public class StringBuilderBeispiel {
+public class StringBufferBuilderBeispiel {
 
-  public StringBuilderBeispiel() {
+  public StringBufferBuilderBeispiel() {
     String string1 = "Hallo!";
     StringBuilder builder = new StringBuilder(string1);
+
+    // StringBuffer ist das gleiche wie StringBuilder, nur synchronisiert (Multithreading)
+    // StringBuffer ist daher langsamer, aber Multithreaded-fähig
+    StringBuffer buffer = new StringBuffer(string1);
+
     // Konkatenierung in Schleife
     for (int i = 0; i < 20; i++) {
       builder.append(i);         // string1 += "" + i;
@@ -18,6 +23,6 @@ public class StringBuilderBeispiel {
   }
 
   public static void main(String[] args) {
-    new StringBuilderBeispiel();
+    new StringBufferBuilderBeispiel();
   }
 }
