@@ -19,7 +19,7 @@ public class UtilitiesBeispiele {
 
   private static void system() {
     System.out.println(System.getProperty("line.separator"));
-    System.out.println(System.getenv("path"));
+    System.out.println(System.getenv("PATH"));
     try {
       Runtime.getRuntime().exec("say i can speak!");
     } catch (IOException e) {
