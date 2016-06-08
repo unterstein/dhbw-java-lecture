@@ -24,9 +24,16 @@ public class Java8Features {
         System.out.println(s);
       }
     }
+
     // stream/bulk operations
-    stringList.stream().filter(string -> string.length() > 4)
-        .map(string -> string.length()).reduce((x, y) -> x + y);
+    stringList.stream() // stream ist Schlüsselmethode für Bulkoperations
+        .filter(string -> string.length() > 4) // filtert basierend auf Predicate (Lambda Expression!)
+        .forEach(string -> System.out.println(string)); // forEach hat keinen Rückgabewert
+
+    stringList.stream() // stream ist Schlüsselmethode für Bulkoperations
+        .filter(string -> string.length() > 4) //
+        .map(string -> string.length()) // map muss Rückgabewert haben, damit man weiter machen kann
+        .reduce((x, y) -> x + y);
 
 
     // Lambda expressions
