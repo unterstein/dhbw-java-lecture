@@ -33,6 +33,6 @@ public class UtilitiesBeispiele {
     utilities();
     system();
     System.exit(0);
-    System.out.println("Eigentlich schon tot!");
+    System.out.println("Wird dies noch ausgegeben?");
   }
 }
