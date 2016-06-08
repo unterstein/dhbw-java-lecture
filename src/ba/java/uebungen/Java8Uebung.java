@@ -1,8 +1,13 @@
 package ba.java.uebungen;
 
+import ba.java.gehaltsberechnung.Gehaltsabrechnung;
+import ba.java.gehaltsberechnung.Manager;
+import ba.java.gehaltsberechnung.Mitarbeiter;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Java8Uebung {
@@ -44,5 +49,23 @@ public class Java8Uebung {
     System.out.println(optional);
     System.out.println(optional.isPresent());
     System.out.println(optional.get()); // .get auf empty Optionals geht nicht...
+
+
+
+    // Beispiel: Mitarbeiter!
+    // Alle Manager erhalten eine Gehaltserhöhung
+    Gehaltsabrechnung.alleMitarbeiter().stream() //
+        .filter(mitarbeiter -> mitarbeiter instanceof Manager) //
+        .forEach(mitarbeiter -> mitarbeiter.gehaltsErhoehung());
+
+    // Alle Mitarbeiter filtern ab bestimmtem Gehalt und zählen
+    long mitarbeiterAnzahl = Gehaltsabrechnung.alleMitarbeiter().stream()
+        .filter(mitarbeiter -> mitarbeiter.berechneGehalt() > 1000)
+        .count();
+
+    // Alle Mitarbeiter filtern ab bestimmtem Gehalt und wieder in Liste zusammen führen
+    List<Mitarbeiter> mitarbeiterMitBestimmtenGehalt = Gehaltsabrechnung.alleMitarbeiter().stream()
+        .filter(mitarbeiter -> mitarbeiter.berechneGehalt() > 1000)
+        .collect(Collectors.toList());
   }
 }
