@@ -18,8 +18,10 @@ public class UtilitiesBeispiele {
   }
 
   private static void system() {
-    System.out.println(System.getProperty("line.separator"));
-    System.out.println(System.getenv("PATH"));
+    System.out.println(System.getProperty("line.separator")); // Zeilenumbruch
+    System.out.println(System.getProperty("user.dir")); // Ausführungsordner
+    System.out.println(System.getProperty("user.home")); // Homefolder vom aktuellen Benutzer
+    System.out.println(System.getenv("PATH")); // Umgebungsvariablen
     try {
       Runtime.getRuntime().exec("say i can speak!");
     } catch (IOException e) {
@@ -30,5 +32,7 @@ public class UtilitiesBeispiele {
   public static void main(String[] args) {
     utilities();
     system();
+    System.exit(0);
+    System.out.println("Eigentlich schon tot!");
   }
 }
