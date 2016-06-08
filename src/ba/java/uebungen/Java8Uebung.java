@@ -50,8 +50,6 @@ public class Java8Uebung {
     System.out.println(optional.isPresent());
     System.out.println(optional.get()); // .get auf empty Optionals geht nicht...
 
-
-
     // Beispiel: Mitarbeiter!
     // Alle Manager erhalten eine Gehaltserhöhung
     Gehaltsabrechnung.alleMitarbeiter().stream() //
