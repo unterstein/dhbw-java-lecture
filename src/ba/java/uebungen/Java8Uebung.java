@@ -65,5 +65,8 @@ public class Java8Uebung {
     List<Mitarbeiter> mitarbeiterMitBestimmtenGehalt = Gehaltsabrechnung.alleMitarbeiter().stream()
         .filter(mitarbeiter -> mitarbeiter.berechneGehalt() > 1000)
         .collect(Collectors.toList());
+
+    // Und jetzt mal alle Gehälter berechnen!
+    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(m -> m.berechneGehalt()).reduce((m1, m2) -> m1 + m2).get();
   }
 }
