@@ -20,10 +20,15 @@ public class Gehaltsabrechnung {
   }
 
 
+  public static List<Mitarbeiter> alleMitarbeiter() {
+    List<Mitarbeiter> result = new ArrayList<>();
+    result.add(new Arbeiter(10, 150));
+    result.add(new Angestellter(3000, 1000));
+    return result;
+  }
+
   public static void main(String[] args) {
-    List<Mitarbeiter> unsereMitarbeiter = new ArrayList<>();
-    unsereMitarbeiter.add(new Arbeiter(10, 150));
-    unsereMitarbeiter.add(new Angestellter(3000, 1000));
+    List<Mitarbeiter> unsereMitarbeiter = alleMitarbeiter();
 
     Gehaltsabrechnung gehaltsabrechnung = new Gehaltsabrechnung(unsereMitarbeiter);
     System.out.println(gehaltsabrechnung.berechneAlleGehaelter());
