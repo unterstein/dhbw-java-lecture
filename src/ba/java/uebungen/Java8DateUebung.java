@@ -14,6 +14,7 @@ public class Java8DateUebung {
 
     // Clock ist für Timestamps! Milliseconds seit 01.01.1970
     Clock clock = Clock.systemUTC();
+    clock.millis();
 
     // Clock ist mit einer Zeitzone behafter
     Clock clockWithTimezone = Clock.system(ZoneId.of("Europe/Berlin"));
@@ -37,7 +38,8 @@ public class Java8DateUebung {
     // Es gibt auch Dauern
     Duration twelveDayDuration = Duration.ofDays(12);
     Duration twelveSecondDuration = Duration.ofSeconds(12);
+    Duration longerDuration = twelveDayDuration.plus(twelveDayDuration);
 
-    LocalDateTime localDateTimePlusDuration = localDateTime.plus(twelveDayDuration);
+    LocalDateTime whenAmI = localDateTime.plus(twelveDayDuration).plus(twelveSecondDuration).minus(longerDuration);
   }
 }
