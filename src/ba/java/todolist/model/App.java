@@ -1,6 +1,5 @@
 package ba.java.todolist.model;
 
-import ba.java.todolist.serialization.SerializationHelper;
 import ba.java.todolist.serialization.SerializationMode;
 
 import java.util.HashMap;
