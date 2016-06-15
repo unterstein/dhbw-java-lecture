@@ -11,6 +11,10 @@ public class User implements Serializable {
   private String password;
   private List<TodoList> lists;
 
+  public User() {
+    // Default Constructor is needed or JAXB
+  }
+
   public User(String name, String password) {
     this.name = name;
     this.password = HashHelper.hash(password);

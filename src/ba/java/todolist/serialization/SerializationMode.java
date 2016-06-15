@@ -2,7 +2,7 @@ package ba.java.todolist.serialization;
 
 public enum SerializationMode {
   BINARY(new BinarySerializer()), //
-  XML(null), //
+  XML(new XmlSerializer()), //
   LIST(null), //
   ;
 

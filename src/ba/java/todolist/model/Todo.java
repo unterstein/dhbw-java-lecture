@@ -10,6 +10,10 @@ public class Todo implements Serializable {
   private boolean prioritized;
   private LocalDate dueDate;
 
+  public Todo() {
+    // Default Constructor is needed or JAXB
+  }
+
   public Todo(String name) {
     this.name = name;
   }

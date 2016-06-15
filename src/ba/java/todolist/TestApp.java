@@ -8,7 +8,7 @@ import ba.java.todolist.serialization.SerializationMode;
 public class TestApp {
 
   public static void main(String[] args) {
-    App app = new App(SerializationMode.BINARY);
+    App app = new App(SerializationMode.XML);
 
     User johannes = app.register("Johannes", "asdasd");
 

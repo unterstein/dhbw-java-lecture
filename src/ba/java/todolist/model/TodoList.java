@@ -9,6 +9,10 @@ public class TodoList implements Serializable {
   private String name;
   private List<Todo> todo;
 
+  public TodoList() {
+    // Default Constructor is needed or JAXB
+  }
+
   public TodoList(String name) {
     this.name = name;
     todo = new ArrayList<>();

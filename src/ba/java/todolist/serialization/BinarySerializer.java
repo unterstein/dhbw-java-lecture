@@ -13,7 +13,7 @@ class BinarySerializer implements Serializer {
 
   @Override
   public void save(Map<String, User> users) {
-    try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream("datenbank"))) {
+    try (ObjectOutputStream objectOutputStream = new ObjectOutputStream(new FileOutputStream(DATABASE_FILE))) {
       objectOutputStream.writeObject(users);
     } catch (IOException o_O) {
       o_O.printStackTrace();
@@ -21,8 +21,9 @@ class BinarySerializer implements Serializer {
   }
 
   @Override
+  @SuppressWarnings("unchecked")
   public Map<String, User> load() {
-    try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream("datenbank"))) {
+    try (ObjectInputStream objectInputStream = new ObjectInputStream(new FileInputStream(DATABASE_FILE))) {
       return (Map<String, User>) objectInputStream.readObject();
     } catch (Exception o_O) {
       o_O.printStackTrace();

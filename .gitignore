@@ -12,3 +12,4 @@ hs_err_pid*.log
 bin
 out
 datenbank
+database
