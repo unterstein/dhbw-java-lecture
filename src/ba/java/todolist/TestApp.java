@@ -3,11 +3,12 @@ package ba.java.todolist;
 import ba.java.todolist.model.App;
 import ba.java.todolist.model.User;
 import ba.java.todolist.model.TodoList;
+import ba.java.todolist.serialization.SerializationMode;
 
 public class TestApp {
 
   public static void main(String[] args) {
-    App app = new App();
+    App app = new App(SerializationMode.BINARY);
 
     User johannes = app.register("Johannes", "asdasd");
 

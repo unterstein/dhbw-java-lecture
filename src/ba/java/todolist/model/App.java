@@ -1,6 +1,7 @@
 package ba.java.todolist.model;
 
-import ba.java.todolist.SerializationHelper;
+import ba.java.todolist.serialization.SerializationHelper;
+import ba.java.todolist.serialization.SerializationMode;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -8,8 +9,10 @@ import java.util.Map;
 public class App {
 
   private Map<String, User> users;
+  private SerializationMode mode;
 
-  public App() {
+  public App(SerializationMode mode) {
+    this.mode = mode;
     users = new HashMap<>();
   }
 
@@ -31,11 +34,11 @@ public class App {
   }
 
   public void load() {
-    users = SerializationHelper.load();
+    users = mode.getSerializer().load();
   }
 
   public void save() {
-    SerializationHelper.save(users);
+    mode.getSerializer().save(users);
   }
 
   public void clear() {
