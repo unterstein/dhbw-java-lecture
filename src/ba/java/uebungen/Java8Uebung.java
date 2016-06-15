@@ -23,11 +23,15 @@ public class Java8Uebung {
     }
     liste.stream() // Keyword für Java8 Collections
         .map(Java8Uebung::methodRef) // .map erwartet Rückgabewert -> return String
-        .forEach(System.out::println); // .forEach ist das gleiche wie .map, allerdings ohne Rückgabewert -> return void
+        .distinct() // alle Werte kommen nur noch ein mal vor
+        .forEach(string -> {
+          System.out.print(string);
+          System.out.println(string); // Code-Blöcke gehen auch
+        }); // .forEach ist das gleiche wie .map, allerdings ohne Rückgabewert -> return void
 
     Optional<Integer> result = liste.stream() // .reduce liefert ein Optional zurück! "Kann was drin sein, muss aber nicht"
-        .map(String::length) // .map funktioniert auch mit Lambdas
-        .reduce((a, b) -> a + b);// .reduce reduziert zwei Werte aus der Liste zu einem, basierend auf Lambda
+        .map(string -> string.length()) // .map funktioniert auch mit Lambdas
+        .reduce((eins, zwei) -> eins + zwei);// .reduce reduziert alle Werte (paarweise) aus der Liste zu einem, basierend auf Lambda
     System.out.println(result);
 
     boolean anyMatch = liste.stream()
@@ -49,7 +53,7 @@ public class Java8Uebung {
     Optional<String> optional = Optional.empty();
     System.out.println(optional);
     System.out.println(optional.isPresent());
-    System.out.println(optional.get()); // .get auf empty Optionals geht nicht...
+    // System.out.println(optional.get()); // .get auf empty Optionals geht nicht...
 
     // Beispiel: Mitarbeiter!
     // Alle Manager erhalten eine Gehaltserhöhung
@@ -69,5 +73,6 @@ public class Java8Uebung {
 
     // Und jetzt mal alle Gehälter berechnen!
     Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(Mitarbeiter::berechneGehalt).reduce((m1, m2) -> m1 + m2).get();
+    System.out.println(alleGehaelter);
   }
 }
