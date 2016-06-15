@@ -20,7 +20,7 @@ public class UtilitiesBeispiele {
   private static void system() {
     System.out.println(System.getProperty("line.separator")); // Zeilenumbruch
     System.out.println(System.getProperty("user.dir")); // Ausführungsordner
-    System.out.println(System.getProperty("user.home")); // Homefolder vom aktuellen Benutzer
+    System.out.println(System.getProperty("user.home")); // Homefolder vom aktuellen User
     System.out.println(System.getenv("PATH")); // Umgebungsvariablen
     try {
       Runtime.getRuntime().exec("say i can speak!");

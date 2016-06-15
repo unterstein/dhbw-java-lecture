@@ -7,42 +7,42 @@ import java.util.Map;
 
 public class App {
 
-  private Map<String, Benutzer> benutzer;
+  private Map<String, User> users;
 
   public App() {
-    benutzer = new HashMap<>();
+    users = new HashMap<>();
   }
 
-  public Benutzer register(String name, String password) {
-    if (benutzer.containsKey(name)) {
+  public User register(String name, String password) {
+    if (users.containsKey(name)) {
       return null;
     }
-    Benutzer result = new Benutzer(name, password);
-    benutzer.put(name, result);
+    User result = new User(name, password);
+    users.put(name, result);
     return result;
   }
 
-  public Benutzer login(String name, String password) {
-    Benutzer benutzer = this.benutzer.get(name);
-    if (benutzer != null && benutzer.login(name, password)) {
-      return benutzer;
+  public User login(String name, String password) {
+    User user = this.users.get(name);
+    if (user != null && user.login(name, password)) {
+      return user;
     }
     return null;
   }
 
   public void load() {
-    benutzer = SerializationHelper.load();
+    users = SerializationHelper.load();
   }
 
   public void save() {
-    SerializationHelper.save(benutzer);
+    SerializationHelper.save(users);
   }
 
   public void clear() {
-    benutzer.clear();
+    users.clear();
   }
 
   public int userCount() {
-    return benutzer.keySet().size();
+    return users.keySet().size();
   }
 }

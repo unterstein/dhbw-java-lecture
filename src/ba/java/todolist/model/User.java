@@ -6,12 +6,12 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Benutzer implements Serializable {
+public class User implements Serializable {
   private String name;
   private String password;
   private List<TodoList> lists;
 
-  public Benutzer(String name, String password) {
+  public User(String name, String password) {
     this.name = name;
     this.password = HashHelper.hash(password);
     lists = new ArrayList<>();
