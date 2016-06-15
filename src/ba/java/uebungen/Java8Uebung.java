@@ -26,7 +26,7 @@ public class Java8Uebung {
         .forEach(System.out::println); // .forEach ist das gleiche wie .map, allerdings ohne Rückgabewert -> return void
 
     Optional<Integer> result = liste.stream() // .reduce liefert ein Optional zurück! "Kann was drin sein, muss aber nicht"
-        .map(string -> string.length()) // .map funktioniert auch mit Lambdas
+        .map(String::length) // .map funktioniert auch mit Lambdas
         .reduce((a, b) -> a + b);// .reduce reduziert zwei Werte aus der Liste zu einem, basierend auf Lambda
     System.out.println(result);
 
@@ -55,7 +55,7 @@ public class Java8Uebung {
     // Alle Manager erhalten eine Gehaltserhöhung
     Gehaltsabrechnung.alleMitarbeiter().stream() //
         .filter(mitarbeiter -> mitarbeiter instanceof Manager) //
-        .forEach(mitarbeiter -> mitarbeiter.gehaltsErhoehung());
+        .forEach(Mitarbeiter::gehaltsErhoehung);
 
     // Alle Mitarbeiter filtern ab bestimmtem Gehalt und zählen
     long mitarbeiterAnzahl = Gehaltsabrechnung.alleMitarbeiter().stream()
@@ -68,6 +68,6 @@ public class Java8Uebung {
         .collect(Collectors.toList());
 
     // Und jetzt mal alle Gehälter berechnen!
-    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(m -> m.berechneGehalt()).reduce((m1, m2) -> m1 + m2).get();
+    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(Mitarbeiter::berechneGehalt).reduce((m1, m2) -> m1 + m2).get();
   }
 }
