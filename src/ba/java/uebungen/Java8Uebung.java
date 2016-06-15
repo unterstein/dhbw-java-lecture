@@ -32,6 +32,7 @@ public class Java8Uebung {
 
     boolean anyMatch = liste.stream()
         .anyMatch(s -> Integer.valueOf(s) % 2 == 0); // checks mit .anyMatch
+
     System.out.println(anyMatch);
 
     boolean allMatch = liste.stream()
