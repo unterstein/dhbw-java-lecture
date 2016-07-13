@@ -9,6 +9,10 @@ public class Pkw extends BodenFahrzeug {
 
   public int anzahlBlinker;
 
+  public boolean brauchtWartung() {
+    return false;
+  }
+
   public void blinkeRechts() {
     System.out.println("blink blink");
   }
