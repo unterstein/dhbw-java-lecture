@@ -1,14 +1,13 @@
 package ba.java.uebungen;
 
-import ba.java.auto.AudiQFuenf;
-import ba.java.auto.OpelAstra;
-import ba.java.auto.Pkw;
-import ba.java.auto.VwPassat;
+import ba.java.auto.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LateBindingUebung {
+
+    public static final String CONSTANT_STRING = "lala";
 
     public static void main(String[] args) {
         // initialize
@@ -24,6 +23,9 @@ public class LateBindingUebung {
             if (pkw.brauchtWartung()) { // <<-- LateBinding!
                 // schick den halt zur Wartung
                 System.out.println(pkw.getClass().getSimpleName() + " braucht wartung");
+            }
+            if (pkw instanceof Allrad) {
+                System.out.println(pkw.getClass().getSimpleName() + " muss spezielle behandlung haben, weil Allrad.");
             }
         }
     }

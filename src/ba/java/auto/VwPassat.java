@@ -1,5 +1,5 @@
 package ba.java.auto;
 
-public class VwPassat extends Suv {
+public class VwPassat extends Pkw {
 
 }

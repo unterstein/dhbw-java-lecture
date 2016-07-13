@@ -1,6 +1,6 @@
 package ba.java.auto;
 
-public class Suv extends Pkw {
+public class Suv extends Pkw implements Allrad {
 
   public void starteAuto() {
     blinkeRechts();
