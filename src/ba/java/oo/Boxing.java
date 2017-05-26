@@ -14,7 +14,8 @@ public class Boxing {
 
     // soweit alles ok, aber bei folgendem Code potentielle Gefahr:
     Integer meineMagischeZahl = null; // Referenztypen dürfen mit null initialisiert werden
-    magieMitZahlen(meineMagischeZahl); // Es wid auto unboxing versucht, allerdings fliegt es fürchterlich auf die Nase!
+    // Es wid auto unboxing versucht, allerdings fliegt es fürchterlich auf die Nase!
+    magieMitZahlen(meineMagischeZahl);
   }
 
   private static int magieMitZahlen(int i) {
