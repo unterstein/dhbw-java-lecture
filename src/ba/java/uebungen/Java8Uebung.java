@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class Java8Uebung {
 
@@ -72,7 +71,7 @@ public class Java8Uebung {
         .collect(Collectors.toList());
 
     // Und jetzt mal alle Gehälter berechnen!
-    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(Mitarbeiter::berechneGehalt).reduce((m1, m2) -> m1 + m2).get();
+    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(Mitarbeiter::berechneGehalt).reduce((m1, m2) -> m1 + m2).orElseGet(() -> 0.0);
     System.out.println(alleGehaelter);
   }
 }
