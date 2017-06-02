@@ -19,6 +19,12 @@ public class Gehaltsabrechnung {
     return result;
   }
 
+  public double berechneAlleGehaelter8() {
+    return alleMitarbeiter.stream()
+        .map(a -> a.berechneGehalt())
+        .reduce((a1, a2) -> a1 + a2).get();
+  }
+
 
   public static List<Mitarbeiter> alleMitarbeiter() {
     List<Mitarbeiter> result = new ArrayList<>();
