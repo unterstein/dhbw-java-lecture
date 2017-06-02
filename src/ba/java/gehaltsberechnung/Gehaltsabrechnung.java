@@ -22,7 +22,7 @@ public class Gehaltsabrechnung {
   public double berechneAlleGehaelter8() {
     return alleMitarbeiter.stream()
         .map(a -> a.berechneGehalt())
-        .reduce((a1, a2) -> a1 + a2).get();
+        .reduce((a1, a2) -> a1 + a2).orElseGet(() -> 0.0);
   }
 
 
