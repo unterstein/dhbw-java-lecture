@@ -17,9 +17,19 @@ public class Java8Uebung {
 
   public static void main(String[] args) {
     List<String> liste = new ArrayList<>();
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 100; i++) {
       liste.add("" + i);
     }
+    Optional<Integer> r = liste.stream()
+        .map(i -> "Hallo " + i)
+        .filter(s -> s.length() > 7)
+        .map(i -> i.length())
+        .reduce((a, b) -> a + b);
+
+    System.out.println(r.isPresent());
+
+    System.out.println(r.orElse(0));
+
     liste.stream() // Keyword für Java8 Collections
         .map(Java8Uebung::methodRef) // .map erwartet Rückgabewert -> return String
         .distinct() // alle Werte kommen nur noch ein mal vor

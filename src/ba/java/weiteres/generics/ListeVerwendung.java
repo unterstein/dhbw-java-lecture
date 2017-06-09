@@ -6,8 +6,8 @@ public class ListeVerwendung {
   public ListeVerwendung() {
     // Beispiel eines generischen Typs
     Liste<Integer> liste = new Liste<Integer>(10);
-    liste.addElement(5);
-//        liste.addElement(1.5); // Compiler-Fehler!
+    liste.add(5);
+//        liste.add(1.5); // Compiler-Fehler!
 
     // Typinkompatibilität in generischen Typen
     // Bei generischen Typen ist Polymorphie
@@ -17,8 +17,8 @@ public class ListeVerwendung {
     // Dies ist verboten, weil sonst folgender Code möglich wäre:
 //        Liste<Double> listeDb = new Liste<Double>(10);
 //        Liste<Number> listeNum = listeDb;
-//        listeNum.addElement(new Integer(7));
-//        Double d = listeDb.elementAt(0); // -> Integer(7)
+//        listeNum.add(new Integer(7));
+//        Double d = listeDb.get(0); // -> Integer(7)
 
   }
 

@@ -14,8 +14,16 @@ public class Suv extends Pkw implements Allrad {
   @Override
   public void blinkeRechts() {
     bereiteDifferenzialVor();
-    super.blinkeRechts();
+    superBlinkeRechts();
+
+    super.getHöhe();
+    this.getHöhe();
   }
+//
+//  @Override
+//  public double getHöhe() {
+//    return 12;
+//  }
 
   public static void main(String[] args) {
     Suv suv = new Suv();

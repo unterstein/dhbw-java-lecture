@@ -13,6 +13,11 @@ public class Pkw extends BodenFahrzeug {
     return false;
   }
 
+  public void superBlinkeRechts() {
+    super.blinkeRechts();
+  }
+
+  @Override
   public void blinkeRechts() {
     System.out.println("blink blink");
   }

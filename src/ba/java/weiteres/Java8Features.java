@@ -25,6 +25,9 @@ public class Java8Features {
       }
     }
 
+
+    List<String> meineListe = new ArrayList<>();
+
     // stream/bulk operations
     stringList.stream() // stream ist Schlüsselmethode für Bulkoperations
         .filter(string -> string.length() > 4) // filtert basierend auf Predicate (Lambda Expression!)
