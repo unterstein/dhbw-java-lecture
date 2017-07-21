@@ -4,9 +4,7 @@ import ba.java.gehaltsberechnung.Gehaltsabrechnung;
 import ba.java.gehaltsberechnung.Manager;
 import ba.java.gehaltsberechnung.Mitarbeiter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Java8Uebung {
@@ -41,6 +39,7 @@ public class Java8Uebung {
     Optional<Integer> result = liste.stream() // .reduce liefert ein Optional zurück! "Kann was drin sein, muss aber nicht"
         .map(string -> string.length()) // .map funktioniert auch mit Lambdas
         .reduce((eins, zwei) -> eins + zwei);// .reduce reduziert alle Werte (paarweise) aus der Liste zu einem, basierend auf Lambda
+    result.orElse(42);
     System.out.println(result);
 
     boolean anyMatch = liste.stream()
@@ -81,7 +80,28 @@ public class Java8Uebung {
         .collect(Collectors.toList());
 
     // Und jetzt mal alle Gehälter berechnen!
-    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(Mitarbeiter::berechneGehalt).reduce((m1, m2) -> m1 + m2).orElseGet(() -> 0.0);
+    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(mitarbeiter -> mitarbeiter.berechneGehalt()).reduce((m1, m2) -> m1 + m2).orElseGet(() -> 0.0);
     System.out.println(alleGehaelter);
+
+
+
+
+
+
+
+    List<Mitarbeiter> mitarbeiterListe = new LinkedList<>();
+    Mitarbeiter gesuchterMitarbeiter = null;
+    int mitarbeiterId = 4711;
+    for (Mitarbeiter m: mitarbeiterListe) {
+      if(mitarbeiterId == m.getId()){
+        gesuchterMitarbeiter = m;
+      }
+    }
+
+    Map<Integer, Mitarbeiter> mitarbeiterDatenbank = new HashMap<>();
+    gesuchterMitarbeiter = mitarbeiterDatenbank.get(mitarbeiterId);
+
+
+
   }
 }

@@ -4,7 +4,7 @@ public interface MagischesInterface {
 
   int getTelefonnummer();
 
-  default int getPrivattelefonnummer() {
-    return getTelefonnummer();
+  default int getTelefonnummer2() {
+    return 0;
   }
 }

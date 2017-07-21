@@ -4,10 +4,13 @@ package ba.java.auto;
 import ba.java.gehaltsberechnung.*;
 import ba.java.gehaltsberechnung.testpacket.SpecialGF;
 
+import java.io.Serializable;
 import java.util.*;
 import java.awt.*;
 
-public class AudiQFuenf extends Suv {
+public class AudiQFuenf extends Suv implements Serializable {
+
+  private String snr;
 
   public AudiQFuenf() {
     Pkw pkw = new Pkw();
