@@ -23,7 +23,7 @@ public class SwingDragAndDrop {
   public SwingDragAndDrop() {
     JFrame frame = new JFrame("Drag Drop Demo");
     txtField = new JTextField(20);
-    lbl = new JLabel("This is the text for drag and drop.");
+    lbl = new JLabel("ThisBeispiel is the text for drag and drop.");
     lbl.setTransferHandler(new TransferHandler("text"));
     MouseListener ml = new MouseAdapter() {
       public void mousePressed(MouseEvent e) {

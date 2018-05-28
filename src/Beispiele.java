@@ -80,7 +80,7 @@ public class Beispiele {
     ClassA classA2 = new ClassA(1, 2);
   }
 
-  public final class ClassA {
+  public  class ClassA {
     private int i1;
     private int i2;
 
