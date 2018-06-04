@@ -4,30 +4,40 @@ import java.util.Objects;
 public class ImportBeispiel {
 
   public static void main(String[] args) {
-    TestKlasse testKlasse = new TestKlasse();
-
-    System.out.println(testKlasse.toString());
-
-    testKlasse.equals("Bist du gleich?");
-    testKlasse.hashCode();
+    new Enkel(12).test();
   }
 
-  private static class TestKlasse extends Object {
-    String id;
-    String name;
+  private static class Eltern {
+    public void printString() {
+      System.out.println("eltern");
+    }
+  }
+
+  private static class Kind extends Eltern {
 
     @Override
-    public boolean equals(Object o) {
-      if (this == o) return true;
-      if (o == null || getClass() != o.getClass()) return false;
-      TestKlasse that = (TestKlasse) o;
-      return Objects.equals(id, that.id) &&
-          Objects.equals(name, that.name);
+    public void printString() {
+      System.out.println("KIND!");
+      super.printString();
     }
 
-    @Override
-    public int hashCode() {
-      return Objects.hash(id, name);
+    public void test() {
+      printString();
+      super.printString();
     }
+
+    public Kind(String s) {
+
+    }
+  }
+  private static class Enkel extends Kind {
+
+    String s;
+
+    public Enkel(int i) {
+      super("" + i);
+    }
+
+
   }
 }
