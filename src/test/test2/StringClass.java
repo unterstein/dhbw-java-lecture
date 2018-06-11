@@ -24,7 +24,7 @@ public class StringClass {
     meineListe.add("a");
     meineListe.add("b");
     meineListe.add("c");
-    genericList(meineListe);
+//    genericList(meineListe);
 
     List<?> meineListe2 = new ArrayList<Object>();
 //    List<?> meineListe3 = new ArrayList<?>();
