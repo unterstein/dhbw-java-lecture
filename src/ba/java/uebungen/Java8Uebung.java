@@ -31,7 +31,7 @@ public class Java8Uebung {
     Optional<Integer> result = liste.stream() // .reduce liefert ein Optional zurück! "Kann was drin sein, muss aber nicht"
         .map(string -> string.length()) // .map funktioniert auch mit Lambdas
         .reduce((eins, zwei) -> eins + zwei);// .reduce reduziert alle Werte (paarweise) aus der Liste zu einem, basierend auf Lambda
-    System.out.println(result);
+    System.out.println("result:" + result);
 
     boolean anyMatch = liste.stream()
         .anyMatch(s -> Integer.valueOf(s) % 2 == 0); // checks mit .anyMatch
@@ -71,7 +71,10 @@ public class Java8Uebung {
         .collect(Collectors.toList());
 
     // Und jetzt mal alle Gehälter berechnen!
-    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter().stream().map(Mitarbeiter::berechneGehalt).reduce((m1, m2) -> m1 + m2).orElseGet(() -> 0.0);
+    Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter()
+        .stream()
+        .map(Mitarbeiter::berechneGehalt)
+        .reduce((m1, m2) -> m1 + m2).orElseGet(() -> 0.0);
     System.out.println(alleGehaelter);
   }
 }

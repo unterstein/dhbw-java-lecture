@@ -6,6 +6,7 @@ import javafx.scene.input.MouseEvent;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class Java8Features {
 
@@ -24,6 +25,8 @@ public class Java8Features {
         System.out.println(s);
       }
     }
+
+    int reduce = stringList.stream().map(in -> in.length()).reduce((a, b) -> a + b).orElse(0);
 
     // stream/bulk operations
     stringList.stream() // stream ist Schlüsselmethode für Bulkoperations

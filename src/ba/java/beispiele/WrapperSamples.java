@@ -22,7 +22,7 @@ public class WrapperSamples {
     print(defaultI);
     print(defaultI2.intValue());
 
-    i4.set
+//    i4.set
   }
 
   private static void print(int o) {
