@@ -1,11 +1,14 @@
 package test.test2;
 
 import ba.java.auto.AudiQFuenf;
+import ba.java.weiteres.generics.Liste;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.AccessDeniedException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class BeispielKlasse {
 
@@ -54,11 +57,43 @@ public class BeispielKlasse {
 //
 //    System.out.println("Programm regulär beendet.");
     System.out.println("vorher");
-    dieseRuntimeException("s", "b");
+//    dieseRuntimeException("s", "b");
     System.out.println("nachher");
 
+//    InnerEnum e1 = ;
+    System.out.println(InnerEnum.A.i);
+    InnerEnum.A.i = 15;
+    System.out.println(InnerEnum.A.i);
+
+    List<Integer> ersteListe = new ArrayList<Integer>();
+    ersteListe.add(1);
+    ersteListe.add(2);
+    printListe(ersteListe);
+
+    List<Double> zweiteListe = new ArrayList<Double>();
+    zweiteListe.add(1.0);
+    zweiteListe.add(2.0);
+    printListe(zweiteListe);
+
+    List<AudiQFuenf> dritteListe = new ArrayList<AudiQFuenf>();
+//    printListe(dritteListe);
   }
 
+  private static void printListe(List<? extends Number> liste) {
+    for (Number s : liste) {
+      System.out.println(s);
+    }
+  }
+
+  static enum InnerEnum {
+    A(1), B(2);
+
+    int i;
+
+    InnerEnum(int i) {
+      this.i = i;
+    }
+  }
 
   static void dieseRuntimeException(String s1, String s2) throws RuntimeException {
     throw new IllegalArgumentException();
