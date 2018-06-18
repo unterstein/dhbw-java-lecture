@@ -9,6 +9,8 @@ public class Pkw extends BodenFahrzeug {
 
   public int anzahlBlinker;
 
+  private final int meinPrivateInt = 7;
+
   public boolean brauchtWartung() {
     return false;
   }

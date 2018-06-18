@@ -1,5 +1,6 @@
 package ba.java.oo;
 
+import java.util.Stack;
 import java.util.Vector;
 
 public class BessererStack<T> {
@@ -25,13 +26,19 @@ public class BessererStack<T> {
     return ownVector.size() == 0;
   }
 
+
+
+
   public static void main(String[] args) {
-    BessererStack<String> stack = new BessererStack<>();
-    stack.push("1");
-    stack.push("2");
-    stack.push("3");
-    while (stack.isEmpty() == false) {
-      System.out.println(stack.pull());
-    }
+
+
+
+
+
+
+
+    Stack<String> meinStack = new Stack<>();
+    meinStack.push("eins");
+    meinStack.add(0, "haha");
   }
 }

@@ -21,8 +21,10 @@ public class Java8Uebung {
       liste.add("" + i);
     }
     liste.stream() // Keyword für Java8 Collections
+        .map(string -> "1" + string)
         .map(Java8Uebung::methodRef) // .map erwartet Rückgabewert -> return String
         .distinct() // alle Werte kommen nur noch ein mal vor
+//        .filter(asdasd -> asdasd.contains("0"))
         .forEach(string -> {
           System.out.print(string);
           System.out.println(string); // Code-Blöcke gehen auch
@@ -34,7 +36,7 @@ public class Java8Uebung {
     System.out.println("result:" + result);
 
     boolean anyMatch = liste.stream()
-        .anyMatch(s -> Integer.valueOf(s) % 2 == 0); // checks mit .anyMatch
+        .anyMatch(input -> Integer.valueOf(input) % 2 == 0); // checks mit .anyMatch
 
     System.out.println(anyMatch);
 
@@ -48,6 +50,13 @@ public class Java8Uebung {
         .reduce((a, b) -> a + ", " + b); // .reduce kann auch auf Strings angewendet werden
     System.out.println(reduce.get()); // optional.get() liefert eigentlichen Wert zurück
 
+    reduce.isPresent(); // reduce != null
+    if (reduce.isPresent()) {
+      System.out.println(reduce.get());
+    }
+    reduce.ifPresent(value -> System.out.println(value));
+    System.out.println(reduce.orElse("meinDefaultWert"));
+
     // Optionals
     Optional<String> optional = Optional.empty();
     System.out.println(optional);
@@ -58,6 +67,7 @@ public class Java8Uebung {
     // Alle Manager erhalten eine Gehaltserhöhung
     Gehaltsabrechnung.alleMitarbeiter().stream() //
         .filter(mitarbeiter -> mitarbeiter instanceof Manager) //
+        .filter(mitarbeiter -> mitarbeiter.berechneGehalt() < 1000) //
         .forEach(Mitarbeiter::gehaltsErhoehung);
 
     // Alle Mitarbeiter filtern ab bestimmtem Gehalt und zählen
@@ -73,8 +83,9 @@ public class Java8Uebung {
     // Und jetzt mal alle Gehälter berechnen!
     Double alleGehaelter = Gehaltsabrechnung.alleMitarbeiter()
         .stream()
-        .map(Mitarbeiter::berechneGehalt)
-        .reduce((m1, m2) -> m1 + m2).orElseGet(() -> 0.0);
+//        .map(Mitarbeiter::berechneGehalt)
+        .map(mitarbeiter -> mitarbeiter.berechneGehalt())
+        .reduce((m1, m2) -> m1 + m2).orElse(0.0);
     System.out.println(alleGehaelter);
-  }
+    }
 }
