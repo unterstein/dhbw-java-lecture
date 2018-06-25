@@ -37,8 +37,11 @@ public class BessererStack<T> {
 
 
 
+
+
     Stack<String> meinStack = new Stack<>();
-    meinStack.push("eins");
-    meinStack.add(0, "haha");
+    meinStack.push("lala");
+    meinStack.add(0, "lolo");
+    meinStack.get(0);
   }
 }

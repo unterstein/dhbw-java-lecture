@@ -30,6 +30,8 @@ public class Java8Uebung {
           System.out.println(string); // Code-Blöcke gehen auch
         }); // .forEach ist das gleiche wie .map, allerdings ohne Rückgabewert -> return void
 
+    liste.stream().filter(a->a=="true").map(a->a).map(a->a);
+
     Optional<Integer> result = liste.stream() // .reduce liefert ein Optional zurück! "Kann was drin sein, muss aber nicht"
         .map(string -> string.length()) // .map funktioniert auch mit Lambdas
         .reduce((eins, zwei) -> eins + zwei);// .reduce reduziert alle Werte (paarweise) aus der Liste zu einem, basierend auf Lambda
@@ -62,6 +64,10 @@ public class Java8Uebung {
     System.out.println(optional);
     System.out.println(optional.isPresent());
     // System.out.println(optional.get()); // .get auf empty Optionals geht nicht...
+    optional.orElse("default");
+
+    Optional.of("string").get();
+    Optional.empty().get();
 
     // Beispiel: Mitarbeiter!
     // Alle Manager erhalten eine Gehaltserhöhung
